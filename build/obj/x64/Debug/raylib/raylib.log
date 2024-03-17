@@ -1,0 +1,20 @@
+﻿  raudio.c
+  rcore.c
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\raylib\src\external\jar_xm.h(242,1): warning C4005: 'DEBUG': macro redefinition
+  (compiling source file '../raylib/src/raudio.c')
+  C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\raylib\src\external\jar_xm.h(242,1):
+  'DEBUG' previously declared on the command line
+  
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\raylib\src\external\rprand.h(205,27): warning C4018: '<': signed/unsigned mismatch
+  (compiling source file '../raylib/src/rcore.c')
+  
+  rglfw.c
+  rmodels.c
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\raylib\src\rmodels.c(5387,30): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\raylib\src\rmodels.c(5669,24): warning C4133: '=': incompatible types - from 'float *' to 'unsigned short *'
+  rshapes.c
+  rtext.c
+  rtextures.c
+  utils.c
+  Generating Code...
+  raylib.vcxproj -> C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\bin\Debug\raylib.lib

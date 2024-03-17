@@ -1,0 +1,17 @@
+﻿  ball.cpp
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(25,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(25,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(41,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  bricks.cpp
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(115,141): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(115,128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(115,100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(115,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(119,141): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(119,128): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(119,100): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\bricks.cpp(119,58): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  gameplay.cpp
+  variables.cpp
+  Generating Code...
+  brick-breaker.vcxproj -> C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\bin\Release\brick-breaker.exe

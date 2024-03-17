@@ -1,0 +1,8 @@
+#pragma once
+
+extern int SCREEN_WIDTH;
+extern int SCREEN_HEIGHT;
+extern int CENTER_X;
+extern int CENTER_Y;
+extern int target_FPS;
+extern float BALL_SPEED;

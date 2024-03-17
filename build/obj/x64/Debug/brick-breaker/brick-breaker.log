@@ -1,0 +1,5 @@
+﻿  ball.cpp
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(25,46): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(25,29): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\game\src\ball.cpp(41,25): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+  brick-breaker.vcxproj -> C:\Users\onurs\OneDrive\Desktop\Game\brick-breaker\bin\Debug\brick-breaker.exe
