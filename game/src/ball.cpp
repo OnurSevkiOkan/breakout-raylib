@@ -1,7 +1,10 @@
-#include "ball.h"
+﻿#include "ball.h"
 #include <raylib.h>
 #include <math.h>
 #include "variables.h"
+#include "title_screen.h"
+
+TITLE_SCREEN ts;
 
 Vector2 ball_position = { 300, 750 }; // Initial ball position.
 Texture2D ball_texture; // Texture for the ball.
@@ -15,6 +18,8 @@ void Ball::InitializeTexture()
     ball_texture = LoadTexture("resources/ball.png");
 }
 
+Rectangle buttonBounds = ts.getButtonBounds();
+
 void Ball::drawBall()
 {
     ClearBackground(BLACK);
@@ -26,14 +31,14 @@ void Ball::drawBall()
 }
 void Ball::updateBall()
 {
-    static bool clicked = false; 
-
+    static bool clicked = false;
+ 
     // Update ball position
     if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && !clicked)
     {
+        Vector2 cursorPos = GetMousePosition();
         clicked = true;
 
-        Vector2 cursorPos = GetMousePosition();
 
         ball_velocity.x = cursorPos.x - ball_position.x;
         ball_velocity.y = cursorPos.y - ball_position.y;
