@@ -17,12 +17,12 @@ void TITLE_SCREEN::unloadPlayButtonTexture()
 void TITLE_SCREEN::drawPlayButton()
 {
     frameHeight = (float)play_button.height / NUM_FRAMES;
-    Rectangle sourceRec = { 0, 0, (float)play_button.width, frameHeight };
+    Rectangle sourceRec = { 0, 0, (float)play_button.width, play_button.height };
     Rectangle destRec = { SCREEN_WIDTH / 2.0f - play_button.width / 2.0f, SCREEN_HEIGHT / 2.0f - frameHeight / 2.0f, (float)play_button.width, frameHeight };
     mousePoint = GetMousePosition();
     btnAction = false;
 
-    btnBounds = { SCREEN_WIDTH / 2.0f - play_button.width / 2.0f, SCREEN_HEIGHT / 2.0f - frameHeight / 2.0f, (float)play_button.width, frameHeight };
+    btnBounds = { (float)GetScreenWidth() / 2.0f - play_button.width / 2.0f, (float)GetScreenHeight() / 2.0f - play_button.width / 2.0f, (float)play_button.width, (float)play_button.height };
 
     DrawTextureRec(play_button, sourceRec, { btnBounds.x, btnBounds.y }, WHITE);
 
