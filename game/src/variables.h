@@ -6,3 +6,5 @@ extern int CENTER_X;
 extern int CENTER_Y;
 extern int target_FPS;
 extern float BALL_SPEED;
+extern int click_counter;
+extern bool is_alive;

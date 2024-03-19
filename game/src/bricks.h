@@ -9,4 +9,5 @@ private:
 public:
 	void create_brick(Ball& ball);
 	void InitializeBricks();
+	void resetBricks();
 };

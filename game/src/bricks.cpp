@@ -1,7 +1,3 @@
-
-
-
-
 #include "bricks.h"
 #include <raylib.h>
 #include <stdio.h>
@@ -122,4 +118,13 @@ void Bricks::create_brick(Ball& ball)
         }
     }
 
+}
+
+void Bricks::resetBricks() {
+    // Iterate through all bricks and set their active state to true
+    for (int i = 0; i < LINES_OF_BRICKS; i++) {
+        for (int j = 0; j < BRICKS_PER_LINE; j++) {
+            brick[i][j].active = true;
+        }
+    }
 }
