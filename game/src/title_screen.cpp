@@ -44,3 +44,8 @@ int TITLE_SCREEN::getBtnState()
 {
     return btnState;
 }
+
+void TITLE_SCREEN::drawTexts()
+{
+    DrawText("Made by OnurSevkiOkan", 350, 850, 20, BLACK);
+}

@@ -19,6 +19,7 @@ public:
     void drawPlayButton();
     Rectangle& getButtonBounds(); // Function to return a reference to btnBounds
     int getBtnState();
+    void drawTexts();
 };
 
 #endif TITLE_SCREEN_H
