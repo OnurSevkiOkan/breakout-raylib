@@ -272,12 +272,16 @@
   <ItemGroup>
     <ClCompile Include="..\game\src\ball.cpp" />
     <ClCompile Include="..\game\src\bricks.cpp" />
-    <ClCompile Include="..\game\src\gameplay.cpp" />
+    <ClCompile Include="..\game\src\gameplay_screen.cpp" />
+    <ClCompile Include="..\game\src\main.cpp" />
+    <ClCompile Include="..\game\src\title_screen.cpp" />
     <ClCompile Include="..\game\src\variables.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\game\src\ball.h" />
     <ClInclude Include="..\game\src\bricks.h" />
+    <ClInclude Include="..\game\src\gameplay_screen.h" />
+    <ClInclude Include="..\game\src\title_screen.h" />
     <ClInclude Include="..\game\src\variables.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
