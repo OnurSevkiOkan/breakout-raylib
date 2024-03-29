@@ -11,7 +11,6 @@ Bricks brick;
 TITLE_SCREEN title_screen;
 GAMEPLAY_SCREEN gameplay_screen;
 
-
 typedef enum GameScreen { LOGO = 0, TITLE, GAMEPLAY, ENDING } GameScreen;
 
 int main(void)
@@ -20,15 +19,12 @@ int main(void)
     int framesCounter = 0;
     bool isPlayButtonInitialized = false;
     bool isExitButtonInitialized = false;
-    bool isGameOver = false;
 
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Brick Breaker"); // Defines a window.
     SetTargetFPS(target_FPS); // Sets the FPS to 60.
 
-
-    // Ininitalize bricks.
+    // Load necessary resources
     brick.InitializeBricks();
-    
 
     while (!WindowShouldClose())
     {
@@ -36,34 +32,25 @@ int main(void)
         {
         case TITLE:
         {
+            // TODO: Update TITLE screen variables here!
             int button_state = title_screen.getBtnState();
-            
+            // Press enter to change to GAMEPLAY screen
             if (button_state == 2)
             {
                 currentScreen = GAMEPLAY;
-                ball.setBallPosition();
-                isGameOver = false;
             }
 
         } break;
         case GAMEPLAY:
         {
-            if (click_counter > 10)
-            {
-                isGameOver = true;
-            }
-
             int ExitButton_State = gameplay_screen.getExitBtnState();
 
-            if (isExitButtonInitialized == true)
-            {
-                gameplay_screen.drawExitButton();
-            }
-
+            gameplay_screen.drawExitButton();
 
             if (ExitButton_State == 2)
             {
                 currentScreen = ENDING;
+                click_counter = 0;
                 ball.setBallPosition();
                 brick.resetBricks();
             }
@@ -94,22 +81,17 @@ int main(void)
                 title_screen.initPlayButton();
                 isPlayButtonInitialized = true;
             }
+
         } break;
 
         case GAMEPLAY:
         {
             brick.create_brick(ball);
-            
+
             ball.drawBall();
-
-            // To prevent the ball position change when the button is clicked
-            if (click_counter <= 10 && isGameOver == false && brick.isAllBricksGone() == false)
-            {
-                ball.updateBall();
-            }
-            
+            ball.updateBall();
             ball.drawScore();
-
+            
             if (brick.isAllBricksGone() == true)
             {
                 ball.setBallPosition();
@@ -125,8 +107,8 @@ int main(void)
 
             if (click_counter > 10)
             {
-                isGameOver = true;
                 ball.setBallPosition();
+
                 DrawText("HaHaHaHA LOOOSER B!TCHES", GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 30, WHITE);
 
                 if (!isExitButtonInitialized && currentScreen == GAMEPLAY)
@@ -143,9 +125,8 @@ int main(void)
             {
                 gameplay_screen.unloadExitButtonTexture();
                 isExitButtonInitialized = false;
-                click_counter = 0;
             }
-
+           
             DrawRectangle(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT, BLUE);
             DrawText("ENDING SCREEN", 20, 20, 40, DARKBLUE);
             DrawText("PRESS ENTER or TAP to RETURN to TITLE SCREEN", 120, 220, 20, DARKBLUE);

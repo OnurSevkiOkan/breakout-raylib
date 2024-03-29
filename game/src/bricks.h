@@ -12,4 +12,5 @@ public:
 	void InitializeBricks();
 	void resetBricks();
 	bool isAllBricksGone();
+	void unloadBrickTexture();
 };

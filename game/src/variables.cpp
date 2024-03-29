@@ -9,3 +9,4 @@ float BALL_SPEED = 500.0f;
 int click_counter = 0;
 bool is_alive = true;
 int COINS = 0;
+//bool isGameOver = false;

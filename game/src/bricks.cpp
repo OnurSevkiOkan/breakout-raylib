@@ -10,6 +10,8 @@
 #define LINES_OF_BRICKS 5
 #define BRICKS_PER_LINE 5
 
+Texture2D brick_texture; // declare as a global variable
+
 typedef struct Brick {
     Vector2 position;
     bool active;
@@ -102,17 +104,29 @@ void Bricks::create_brick(Ball& ball)
     // Draw bricks
     for (int i = 0; i < LINES_OF_BRICKS; i++)
     {
+        static bool isBrickTextureInitialized = false;
+
+        if (isBrickTextureInitialized == false)
+        {
+            brick_texture = LoadTexture("resources/Brick.png");
+            isBrickTextureInitialized = true;
+        }
+
+
         for (int j = 0; j < BRICKS_PER_LINE; j++)
         {
             if (brick[i][j].active)
             {
                 if ((i + j) % 2 == 0)
                 {
-                    DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKPURPLE);
+                    //DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKPURPLE);
+                    //DrawTextureRec(brick_texture, {brickSize.x, brickSize.y}, {brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2}, WHITE);
+                    DrawTexture(brick_texture, brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2 , WHITE);
                 }
                 else
                 {
-                    DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKBLUE);
+                    DrawTexture(brick_texture, brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, WHITE);
+                    //DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKBLUE);
                 }
             }
         }
@@ -144,4 +158,9 @@ bool Bricks::isAllBricksGone()
     }
     // If the loop completes without finding any active bricks, return true
     return true;
+}
+
+void Bricks::unloadBrickTexture()
+{
+    UnloadTexture(brick_texture);
 }

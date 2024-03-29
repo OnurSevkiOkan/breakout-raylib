@@ -8,3 +8,4 @@ extern int target_FPS;
 extern float BALL_SPEED;
 extern int click_counter;
 extern bool is_alive;
+//extern bool isGameOver;

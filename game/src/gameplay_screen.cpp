@@ -22,16 +22,23 @@ void GAMEPLAY_SCREEN::drawExitButton()
     ExitButtonMousePoint = GetMousePosition();
     ExitBtnAction = false;
 
+    //LoadRenderTexture(SCREEN_WIDTH / 2.0f - exitButton.width / 2.0f, SCREEN_HEIGHT / 2.0f - ExitButtonframeHeight / 2.0f + 100);
     ExitBtnBounds = { (float)GetScreenWidth() / 2.0f - exitButton.width / 2.0f, (float)GetScreenHeight() / 2.0f - exitButton.width / 2.0f + 100, (float)exitButton.width, (float)exitButton.height };
 
     DrawTextureRec(exitButton
         , sourceRec, { ExitBtnBounds.x, ExitBtnBounds.y }, WHITE);
-
+        
     // Checks collisions
     if (CheckCollisionPointRec(ExitButtonMousePoint, ExitBtnBounds))
     {
-        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)) ExitBtnState = 2;
-        else ExitBtnState = 1;
+        if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
+        {
+            ExitBtnState = 2;
+        }
+        else
+        {
+            ExitBtnState = 1;
+        }
     }
     else ExitBtnState = 0;
 }

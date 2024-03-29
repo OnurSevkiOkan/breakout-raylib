@@ -11,6 +11,7 @@ TITLE_SCREEN ts;
 Vector2 ball_position = { 300, 750 }; // Initial ball position.
 Texture2D ball_texture; // Texture for the ball.
 Bricks bricks;
+Vector2 cursorPos;
 
 // Velocity vector for ball movement
 Vector2 ball_velocity = { 0, 0 };
@@ -56,8 +57,8 @@ void Ball::updateBall()
         // Set the velocity based on the normalized direction
         ball_velocity.x *= BALL_SPEED;
         ball_velocity.y *= BALL_SPEED;
-        click_counter++;
 
+        click_counter++;
     }
 
     if (clicked)
@@ -120,8 +121,10 @@ void Ball::deleteTexture() // Unloads texture if you use one.
 
 void Ball::drawScore()
 {
-    std::string scoreText = std::to_string(click_counter);
-    DrawText(scoreText.c_str(), GetScreenWidth() / 2, GetScreenHeight() / 2 - 420, 20, WHITE);
+    std::string scoreText = "Click Time: ";
+    // std::string scoreText = std::to_string(click_counter);
+    scoreText.append(std::to_string(click_counter));
+    DrawText(scoreText.c_str(), GetScreenWidth() / 2 - 65, GetScreenHeight() / 2 - 420, 20, WHITE);
 }
 
 void Ball::setBallPosition()

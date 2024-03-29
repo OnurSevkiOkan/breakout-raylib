@@ -26,7 +26,7 @@ void TITLE_SCREEN::drawPlayButton()
 
     DrawTextureRec(play_button, sourceRec, { btnBounds.x, btnBounds.y }, WHITE);
 
-    // Checks collisions
+    // Checks collisions of buttons.
     if (CheckCollisionPointRec(mousePoint, btnBounds))
     {
         if (IsMouseButtonReleased(MOUSE_BUTTON_LEFT)) btnState = 2;
