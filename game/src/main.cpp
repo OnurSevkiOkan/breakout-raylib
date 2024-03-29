@@ -50,6 +50,7 @@ int main(void)
         {
             if (click_counter > 10)
             {
+                ball.resetBall();
                 isGameOver = true;
             }
 
@@ -112,7 +113,7 @@ int main(void)
 
             if (brick.isAllBricksGone() == true)
             {
-                ball.setBallPosition();
+                ball.resetBall();
 
                 DrawText("CONGRATULATIONS!", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2 - 50, 30, WHITE);
 
@@ -125,8 +126,7 @@ int main(void)
 
             if (click_counter > 10)
             {
-                isGameOver = true;
-                ball.setBallPosition();
+                ball.resetBall();
                 DrawText("HaHaHaHA LOOOSER B!TCHES", GetScreenWidth() / 2 - 200, GetScreenHeight() / 2 - 50, 30, WHITE);
 
                 if (!isExitButtonInitialized && currentScreen == GAMEPLAY)
@@ -135,7 +135,6 @@ int main(void)
                     isExitButtonInitialized = true;
                 }
             }
-
         } break;
         case ENDING:
         {
@@ -155,8 +154,6 @@ int main(void)
 
         EndDrawing();
     }
-
-    // Unload resources
 
     return 0;
 }

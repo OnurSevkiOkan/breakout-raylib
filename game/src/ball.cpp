@@ -16,6 +16,8 @@ Vector2 cursorPos;
 // Velocity vector for ball movement
 Vector2 ball_velocity = { 0, 0 };
 
+bool Ball::clicked = false;
+
 void Ball::InitializeTexture()
 {
     // Load the ball texture.
@@ -36,8 +38,6 @@ void Ball::drawBall()
 }
 void Ball::updateBall()
 {
-    static bool clicked = false;
- 
     // Update ball position
     if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT) && !clicked)
     {
@@ -130,4 +130,10 @@ void Ball::drawScore()
 void Ball::setBallPosition()
 {
     ball_position = { 300,750 };
+}
+
+void Ball::resetBall() {
+    ball_position = { 300, 750 }; // Reset ball position
+    ball_velocity = { 0, 0 }; // Reset ball velocity
+    clicked = false; // Reset click flag
 }
