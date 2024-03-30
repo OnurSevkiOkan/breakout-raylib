@@ -32,7 +32,6 @@ int main(void)
         {
         case TITLE:
         {
-            // TODO: Update TITLE screen variables here!
             int button_state = title_screen.getBtnState();
             // Press enter to change to GAMEPLAY screen
             if (button_state == 2)
