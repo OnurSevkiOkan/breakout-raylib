@@ -21,10 +21,10 @@ int main(void)
     bool isPlayButtonInitialized = false;
     bool isExitButtonInitialized = false;
     bool isGameOver = false;
-
+    bool isCoinIncreased = false;
+    
     InitWindow(SCREEN_WIDTH, SCREEN_HEIGHT, "Brick Breaker"); // Defines a window.
     SetTargetFPS(target_FPS); // Sets the FPS to 60.
-
 
     // Ininitalize bricks.
     brick.InitializeBricks();
@@ -41,7 +41,7 @@ int main(void)
             if (button_state == 2)
             {
                 currentScreen = GAMEPLAY;
-                ball.setBallPosition();
+                ball.resetBall();
                 isGameOver = false;
             }
 
@@ -65,7 +65,7 @@ int main(void)
             if (ExitButton_State == 2)
             {
                 currentScreen = ENDING;
-                ball.setBallPosition();
+                ball.resetBall();
                 brick.resetBricks();
             }
         } break;
@@ -88,6 +88,7 @@ int main(void)
         {
             title_screen.drawPlayButton();
             title_screen.drawTexts();
+            title_screen.drawCoinAmount();
 
             // Load play button texture when entering the title screen
             if (!isPlayButtonInitialized && currentScreen == TITLE)
@@ -114,6 +115,12 @@ int main(void)
             if (brick.isAllBricksGone() == true)
             {
                 ball.resetBall();
+
+                if (!isCoinIncreased)
+                {
+                    gameplay_screen.addCoin();
+                    isCoinIncreased = true;
+                }
 
                 DrawText("CONGRATULATIONS!", GetScreenWidth() / 2 - 150, GetScreenHeight() / 2 - 50, 30, WHITE);
 

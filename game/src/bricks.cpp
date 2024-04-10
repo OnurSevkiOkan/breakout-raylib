@@ -29,14 +29,14 @@ static Vector2 brickSize = { 0 };
 
 void Bricks::InitializeBricks()
 {
-    brickSize = { 100, 50 }; // Set brick size here
+    brickSize = { 106, 50 }; // Set brick size here
 
     // Initialize brick positions and activity
     for (int i = 0; i < LINES_OF_BRICKS; i++)
     {
         for (int j = 0; j < BRICKS_PER_LINE; j++)
         {
-            brick[i][j].position = { 80 + j * (brickSize.x + 10), 100 + i * (brickSize.y + 10) };
+            brick[i][j].position = { 70 + j * (brickSize.x + 10), 100 + i * (brickSize.y + 10) };
             brick[i][j].active = true;
         }
     }
@@ -119,14 +119,11 @@ void Bricks::create_brick(Ball& ball)
             {
                 if ((i + j) % 2 == 0)
                 {
-                    //DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKPURPLE);
-                    //DrawTextureRec(brick_texture, {brickSize.x, brickSize.y}, {brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2}, WHITE);
                     DrawTexture(brick_texture, brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2 , WHITE);
                 }
                 else
                 {
                     DrawTexture(brick_texture, brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, WHITE);
-                    //DrawRectangle(brick[i][j].position.x - brickSize.x / 2, brick[i][j].position.y - brickSize.y / 2, brickSize.x, brickSize.y, DARKBLUE);
                 }
             }
         }
@@ -162,5 +159,5 @@ bool Bricks::isAllBricksGone()
 
 void Bricks::unloadBrickTexture()
 {
-    UnloadTexture(brick_texture);
+    UnloadTexture(brick_texture); // Unloads bricks texture
 }

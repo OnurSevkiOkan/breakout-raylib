@@ -52,3 +52,8 @@ int GAMEPLAY_SCREEN::getExitBtnState()
 {
     return ExitBtnState;
 }
+
+void GAMEPLAY_SCREEN::addCoin()
+{
+    COINS += 5;
+}

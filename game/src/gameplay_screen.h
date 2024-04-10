@@ -19,6 +19,7 @@ public:
     void drawExitButton();
     Rectangle& getExitButtonBounds(); // Function to return a reference to btnBounds
     int getExitBtnState();
+    void addCoin();
 };
 
 #endif GAMEPLAY_SCREEEN_H

@@ -44,7 +44,6 @@ void Ball::updateBall()
         Vector2 cursorPos = GetMousePosition();
         clicked = true;
 
-
         ball_velocity.x = cursorPos.x - ball_position.x;
         ball_velocity.y = cursorPos.y - ball_position.y;
 
@@ -125,11 +124,6 @@ void Ball::drawScore()
     // std::string scoreText = std::to_string(click_counter);
     scoreText.append(std::to_string(click_counter));
     DrawText(scoreText.c_str(), GetScreenWidth() / 2 - 65, GetScreenHeight() / 2 - 420, 20, WHITE);
-}
-
-void Ball::setBallPosition()
-{
-    ball_position = { 300,750 };
 }
 
 void Ball::resetBall() {

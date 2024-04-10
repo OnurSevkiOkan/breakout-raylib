@@ -20,6 +20,5 @@ public:
 	float getSpeedX(); // Gets the speed of the ball at x axis
 	float getSpeedY(); // Gets the speed of the ball at y axis
 	void setSpeed(Vector2 speed); // Sets the speed of the ball
-	void drawScore();
-	void setBallPosition();
+	void drawScore(); // Draws score on the screen
 };

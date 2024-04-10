@@ -19,6 +19,7 @@ public:
     void drawPlayButton();
     Rectangle& getButtonBounds(); // Function to return a reference to btnBounds
     int getBtnState();
+	void drawCoinAmount();
     void drawTexts();
 };
 
